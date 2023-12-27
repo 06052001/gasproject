@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Quiz hub</title>
+  <style>
+    /* Basic styling for the navbar */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color:#195d2d;
+      color: #fff;
+      padding: 10px 0;
+      text-align: center;
+    }
+    nav {
+      background-color: #207339;
+      text-align: center;
+      padding: 10px 0;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 20px;
+    }
+    nav a:hover {
+      background-color: #d91313;
+    }
+    /* Style for the content */
+    .container {
+      width: 80%;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>GL Bajaj</h1>
+  </header>
+  <nav>
+    <a href="INDEX.HTML">home</a>
+    
+    <a href="login.html">login</a>
+    <a href="gasfeeestimatar.html">Gas Fee Estimatar</a>
+    
+   </nav>
+  
+ 
+  
+
+  <div class="container" id="login" style="display:block;">
+    <h2>Login</h2>
+    <form action="your_backend_script.php" method="post">
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" required>
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" required>
+      <br>
+      <br>
+      <br>
+
+      <input type="submit" value="Login">
+    </form>
+  </div>
+
+  <!-- Admin Page -->
+  <div class="container" id="admin" style="display:none;">
+    <h2>Welcome Admin!</h2>
+    <!-- Admin content goes here -->
+    <p>This is the admin page content.</p>
+  </div>
+
+  <script>
+    // Function to toggle between login and admin pages
+    function togglePages(pageToShow) {
+      const pages = ['login', 'admin'];
+      pages.forEach(page => {
+        const element = document.getElementById(page);
+        if (page === pageToShow) {
+          element.style.display = 'block';
+        } else {
+          element.style.display = 'none';
+        }
+      });
+    }
+
+    // Simulating login functionality - Replace this with actual login logic
+    document.querySelector('form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+
+      // Check credentials - Simulating admin access if username is "admin" and password is "password"
+      if (username === 'sudhanshu' && password === '1234') {
+        togglePages('admin');
+      } 
+      else {
+        alert('Invalid username or password. Please try again.');
+      }
+    });
+  </script>
+</body>
+</html>
